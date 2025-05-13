@@ -112,6 +112,3 @@ Content-Type: application/json
 - GitHub Copilot: Para autocompletar código repetitivo.
 - ChatGPT: Para diseño de arquitectura y sugerencias de pruebas.
 
-## 📄 Licencia
-
-MIT
