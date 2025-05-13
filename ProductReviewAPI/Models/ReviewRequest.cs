@@ -17,7 +17,7 @@
         public ReviewRequest(string content)
         {
             if (string.IsNullOrWhiteSpace(content))
-                throw new ArgumentException("El contenido no puede estar vacío.", nameof(content));
+                throw new ArgumentException("La solicitud no es válida. El contenido no puede estar vacío.", nameof(content));
 
             Content = content;
         }

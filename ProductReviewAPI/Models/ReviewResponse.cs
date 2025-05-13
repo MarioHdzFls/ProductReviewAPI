@@ -14,7 +14,7 @@
         /// <summary>
         /// Puntuación de legibilidad del texto (escala de 0 a 100).
         /// </summary>
-        public int ReadabilityScore { get; init; }
+        public double ReadabilityScore { get; init; }
 
         /// <summary>
         /// Lista de sugerencias para mejorar el texto de la revisión.
@@ -27,7 +27,7 @@
         /// <param name="sentiment">El sentimiento analizado.</param>
         /// <param name="readabilityScore">La puntuación de legibilidad.</param>
         /// <param name="suggestions">Las sugerencias para mejorar.</param>
-        public ReviewResponse(string sentiment, int readabilityScore, IReadOnlyList<string> suggestions)
+        public ReviewResponse(string sentiment, double readabilityScore, IReadOnlyList<string> suggestions)
         {
             if (string.IsNullOrWhiteSpace(sentiment))
                 throw new ArgumentException("El sentimiento no puede estar vacío.", nameof(sentiment));

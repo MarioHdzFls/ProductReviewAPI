@@ -16,19 +16,16 @@ namespace ProductReviewAPI.Controllers
             _reviewService = reviewService;
         }
 
-        [HttpPost("analyze")]
-        public async Task<ActionResult<ReviewResponse>> Analyze([FromBody] ReviewRequest request)
+        [HttpPost("GetReview")]
+        public async Task<ActionResult<ReviewResponse>> GetReview([FromBody] ReviewRequest request)
         {
-            try
+            if (request == null)
             {
-                var result = await _reviewService.AnalyzeReviewAsync(request);
-                return Ok(result);
+                return BadRequest();
             }
-            catch (Exception ex)
-            {
-                // Log the exception (puedes usar un logger aquí)
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Error = ex.Message });
-            }
+
+            var response = await _reviewService.AnalyzeReviewAsync(request);
+            return Ok(response);
         }
     }
 }
